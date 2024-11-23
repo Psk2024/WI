@@ -14,6 +14,7 @@
       color: #b8a850;
       text-align: center;
       position: relative;
+      overflow-x: hidden;
     }
 
     /* Preloader Styles */
@@ -28,8 +29,6 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
-      opacity: 1;
-      animation: fadeInOut 3s ease-in-out;
     }
 
     #preloader h1 {
@@ -39,36 +38,21 @@
       animation: fadeText 3s ease-in-out;
     }
 
-    @keyframes fadeInOut {
-      0% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-
     @keyframes fadeText {
-      0% {
+      0%, 100% {
         opacity: 0;
       }
       50% {
         opacity: 1;
-      }
-      100% {
-        opacity: 0;
       }
     }
 
     /* Main Content */
     .container {
       padding: 20px;
-      position: relative;
       display: none;
     }
+
     .garlands {
       position: absolute;
       top: 0;
@@ -79,85 +63,96 @@
       justify-content: center;
       z-index: 1;
     }
+
     .garlands img {
       max-width: 100%;
     }
+
     .header {
       padding: 10px;
       position: relative;
       z-index: 2;
     }
+
     .header img {
+      margin-top: 5px;
       max-width: 150px;
-      
     }
+
     @keyframes glowing {
       0% {
-        box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ff9900, 0 0 40px #ff6600;
+        text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900, 0 0 30px #ff6600;
       }
       100% {
-        box-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ff9900, 0 0 50px #ff6600;
+        text-shadow: 0 0 20px #ffcc00, 0 0 30px #ff9900, 0 0 40px #ff6600;
       }
     }
+
     .header h1 {
       font-family: 'Cinzel', serif;
       font-size: 48px;
-      margin: 1px 0;
-      display: inline-block;
-      background: linear-gradient(to right, #ffcc00, #ffcc00);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.6);
+      margin: 5px 0;
+      color: #ffcc00;
+      animation: glowing 2s infinite alternate;
     }
 
     .subtext {
       font-size: 18px;
       color: #fff;
+      margin-bottom: 0px;
     }
+
     .section {
-      margin-top: 1px;
+      margin-top: 0px;
     }
+
     .section h2 {
       font-family: 'Cinzel', serif;
       font-size: 24px;
       color: #fff;
       text-transform: uppercase;
-      margin-bottom: 2px;
+      margin-bottom: 0px;
       border-bottom: 2px solid #fff;
       display: inline-block;
       padding-bottom: 5px;
     }
+
     .details {
       font-size: 18px;
-      margin: 10px 0;
       color: #fff;
     }
+
     .footer-dancers {
       display: flex;
       align-items: flex-end;
       justify-content: space-around;
-      margin-top: 20px;
+      margin-top: px;
     }
+
     .dancers img {
-      max-width: 70px;
+      max-width: 50px;
     }
+
     .footer img {
-      width: 175px;
+      width: 150px;
     }
+
     .ornaments {
-      margin-top: 2px;
+      margin-top: 0px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
     }
+
     .ornaments img {
-      max-width: 100px;
+      max-width: 25px;
+      margin: 0px;
     }
 
-    /* Side images */
+    /* Side Images */
     .side-image-left, .side-image-right {
       position: absolute;
-      top: 50%;
+      top: 80%;
       transform: translateY(-50%);
       z-index: 0;
     }
@@ -171,9 +166,33 @@
     }
 
     .side-image-left img, .side-image-right img {
-      max-width: 150px;
-      opacity: 0.15;
+      max-width: 120px;
+      opacity: 0.2;
     }
+
+    @media (max-width: 768px) {
+      .side-image-left img, .side-image-right img {
+        max-width: 80px;
+      }
+
+      .footer img {
+        width: 175px;
+      }
+
+      .header h1 {
+        font-size: 36px;
+      }
+    }
+ 
+}
+
+.name {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  color: #ffcc00;
+  animation: fadeInGrow 3s ease-in-out infinite alternate;
+}
   </style>
 </head>
 <body>
@@ -182,7 +201,7 @@
     <h1>You Are Invited!</h1>
   </div>
 
-  <!-- Side images -->
+  <!-- Side Images -->
   <div class="side-image-left">
     <img src="left-image.png" alt="Left Decoration">
   </div>
@@ -192,26 +211,28 @@
 
   <!-- Main Content -->
   <div class="container">
-    <!-- Flower Garlands -->
     <div class="garlands">
       <img src="flower2.png" alt="Flower Garland">
     </div>
-    <br>
     <div class="header">
       <img src="ganesh.png" alt="Shree Ganesh"><br>
-      <h1>Pikkili</h1><br>
-      <h1>&</h1><br>
-      <h1>Sateesh</h1>
-      <p class="subtext">We warmly invite you to join us in celebrating our love and joy at our wedding. Your presence would mean the world to us!</p>
-    </div>
-
+     <h1><span class="name">Pikkili</span></h1>
+<h1>&</h1>
+<h1><span class="name">Sateesh</span></h1>
+      <p class="subtext">We’re so excited to invite you to celebrate our love and happiness on our wedding day! We can’t wait to share this special moment with you!</div>
     <div class="section">
-      <h2>On Monday, 22th Aug 2022</h2>
-      <div class="details">
-        <p>Muhurtam: Time 7:00 PM</p>
-        <p>Unitech Unihomes Plots Sec - Mu, Greater Noida</p>
-      </div>
-    </div>
+      <h2>Monday, 22nd Aug 2022</h2>
+     <div class="details">
+  <p>Muhurtam: 7:00 PM</p>
+  <p>
+    📌
+    <a href="https://www.google.com/maps/search/?api=1&query=Unitech+Unihomes+Plots+Sec+-+Mu,+Greater+Noida" 
+       target="_blank" 
+       style="color: #fff; text-decoration: underline;">
+      Unitech Unihomes Plots Sec - Mu, Greater Noida
+    </a>
+  </p>
+</div>
 
     <div class="footer-dancers">
       <div class="dancers">
@@ -224,23 +245,32 @@
         <img src="band1.png" alt="Dancer">
       </div>
     </div>
+
     <div class="ornaments">
       <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
+      <img src="ornament.png" alt="Decoration">
+      <img src="ornament.png" alt="Decoration">
+      <img src="ornament.png" alt="Decoration">
+       <img src="ornament.png" alt="Decoration">
+      <img src="ornament.png" alt="Decoration">
+      <img src="ornament.png" alt="Decoration">
+      <img src="ornament.png" alt="Decoration">
+      <img src="ornament.png" alt="Decoration">
+      <img src="ornament.png" alt="Decoration">
+    
     </div>
   </div>
 
   <script>
-    // JavaScript to handle preloader
     window.addEventListener('load', function() {
       const preloader = document.getElementById('preloader');
-      preloader.style.opacity = '0'; // Fade out preloader
+      preloader.style.opacity = '0';
       preloader.style.transition = 'opacity 2s ease-in-out';
-
       setTimeout(() => {
-        preloader.style.display = 'none'; // Remove preloader from view
-        document.querySelector('.container').style.display = 'block'; // Show main content
+        preloader.style.display = 'none';
+        document.querySelector('.container').style.display = 'block';
       }, 2500);
     });
   </script>
