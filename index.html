@@ -17,9 +17,6 @@
       width: 100vw;
       min-height: 100vh;
     }
-  .justified-text {
-    text-align: justify;
-  }
 
     /* Preloader */
     #preloader {
@@ -44,7 +41,7 @@
 
     /* Main Content */
     .container {
-      padding: 20px;
+      padding: 5vw;
       display: none;
     }
 
@@ -66,7 +63,6 @@
     .side-image-left, .side-image-right {
       position: absolute;
       top: 80%;
-      transform: translateY(-50%);
       z-index: 0;
     }
 
@@ -80,66 +76,57 @@
 
     /* Header */
     .header {
-      padding: 2px;
       position: relative;
       z-index: 1;
-      margin-bottom: 0px;
     }
 
     .header img {
-      position: relative;
       margin-top: 40px;
       max-width: 150px;
-      margin-bottom: 0px;
     }
 
     .header h1 {
       font-family: 'Cinzel', serif;
       font-size: 48px;
-      margin: 0px 0;
       color: #ffcc00;
       margin-top: 10px;
-      margin-bottom: 10px;
       animation: glowing 2s infinite alternate;
     }
 
     .subtext {
       font-size: 17px;
       color: #fff;
-      margin-bottom: 0px;
     }
 
     /* Countdown Timer */
     .countdown {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: bold;
-      margin-top: 0px;
       color: #ffcc00;
-      padding: 15px;
-      border-radius: 10px;
-      display: inline-block;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
     }
 
-    /* Hide Music Player */
-    audio {
-      display: none !important;
+    /* Responsive Images */
+    img {
+      max-width: 100%;
+      height: auto;
     }
 
     /* Footer with Dancers */
     .footer-dancers {
       display: flex;
       align-items: flex-end;
-      justify-content: space-around;
-      margin-top: 0px;
+      justify-content: center;
+      margin-top: 5px;
     }
 
     .dancers img { max-width: 70px; }
-
-    .footer img { width: 150px; }
+    .footer img { width: 200px; }
 
     /* Ornaments */
     .ornaments {
-      margin-top: 0px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -150,20 +137,34 @@
       margin: 0px;
     }
 
+    /* Responsive Adjustments */
     @media (max-width: 768px) {
       .side-image-left img, .side-image-right img {
         max-width: 80px;
       }
 
       .header h1 { font-size: 36px; }
-      .footer img { width: 120px; }
-      .container { padding: 10px; }
+      .footer img { width: 150px; }
+      .countdown { font-size: 14px; }
     }
+  .floating-button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    padding: 5px 5px;
+    font-size: 15px;
+    border-radius: 5%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
+.floating-button:hover {
+    background-color: #ffd633;
+}
   </style>
 </head>
 <body>
@@ -193,27 +194,28 @@
         We warmly invite you to join us in celebrating the joyful occasion of the wedding ceremony of
       </p>
       <h1>Sateesh Kumar & Amrutha</h1>
-  <!-- Google Maps Location -->
-    <h3>on Monday, 22nd August 2025</h3>
-    <div class="details">
-      <p>Muhurtam: 7:00 PM</p>
-      <p>
-        📌 
-        <a href="https://www.google.com/maps/search/?api=1&query=Unitech+Unihomes+Plots+Sec+-+Mu,+Greater+Noida"
-           target="_blank"
-           style="color: #fff; text-decoration: underline;">
-         Venue (Click Here)
-        </a>
-      </p>
-    </div>
-    <p class="subtext">Your presence and blessings will make this special day even more memorable.
-We look forward to celebrating this beautiful moment with you!</p>
+  
+      <h3>on Monday, 22nd August 2025</h3>
+      <div class="details">
+        <p>Muhurtam: 7:00 PM</p>
+        <p>
+          📌 
+          <a href="https://www.google.com/maps/search/?api=1&query=Unitech+Unihomes+Plots+Sec+-+Mu,+Greater+Noida"
+             target="_blank"
+             style="color: #fff; text-decoration: underline;">
+           Venue (Click Here)
+          </a>
+        </p>
+      </div>
+      <p class="subtext">Your presence and blessings will make this special day even more memorable.</p>
+<!-- Background Music -->
+<audio id="myAudio" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-    <!-- Background Music -->
-    <audio autoplay loop>
-      <source src="your-music-file.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
+<!-- Floating Audio Control Button -->
+<button class="floating-button" onclick="toggleAudio()">🔇</button>
+
 
     <!-- Footer with Dancers -->
     <div class="footer-dancers">
@@ -227,21 +229,22 @@ We look forward to celebrating this beautiful moment with you!</p>
       <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
-     <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
-   <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
-     <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
-     <img src="ornament.png" alt="Decoration">
+      <img src="ornament.png" alt="Decoration">
+      <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
     </div>
-        <!-- Countdown Timer -->
-      <div class="countdown" id="countdown-timer">00 Days : 00 Hours : 00 Minutes : 00 Seconds</div>
   </div>
+    
+      <!-- Countdown Timer -->
+      <div class="countdown" id="countdown-timer">00 Days : 00 Hours : 00 Minutes : 00 Seconds</div>
+    </div>
+
 
   <script>
     window.addEventListener('load', function() {
@@ -254,8 +257,20 @@ We look forward to celebrating this beautiful moment with you!</p>
       setTimeout(() => {
         preloader.style.display = 'none';
         content.style.display = 'block';
-      }, 1000);
+      }, 1200);
     });
+  function toggleAudio() {
+    var audio = document.getElementById("myAudio");
+    var button = document.querySelector(".floating-button");
+
+    if (audio.paused) {
+        audio.play();
+        button.innerHTML = "🔊"; // Sound On Icon
+    } else {
+        audio.pause();
+        button.innerHTML = "🔇"; // Muted Icon
+    }
+}
 
     function updateCountdown() {
       const weddingDate = new Date("August 22, 2025 19:00:00").getTime();
@@ -272,3 +287,8 @@ We look forward to celebrating this beautiful moment with you!</p>
   </script>
 </body>
 </html>
+
+
+
+
+
