@@ -13,11 +13,15 @@
       background: radial-gradient(circle, #012b29, #0c1502 50%);
       color: #b8a850;
       text-align: center;
-      position: relative;
       overflow-x: hidden;
+      width: 100vw;
+      min-height: 100vh;
     }
+  .justified-text {
+    text-align: justify;
+  }
 
-    /* Preloader Styles */
+    /* Preloader */
     #preloader {
       position: fixed;
       top: 0;
@@ -38,29 +42,19 @@
       animation: fadeText 3s ease-in-out;
     }
 
-    @keyframes fadeText {
-      0%, 100% {
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-    }
-
     /* Main Content */
     .container {
       padding: 20px;
       display: none;
     }
 
+    /* Garland */
     .garlands {
       position: absolute;
       top: 0;
       left: 50%;
       transform: translateX(-50%);
       width: 100%;
-      display: flex;
-      justify-content: center;
       z-index: 1;
     }
 
@@ -68,75 +62,82 @@
       max-width: 100%;
     }
 
+    /* Side Decorations */
+    .side-image-left, .side-image-right {
+      position: absolute;
+      top: 80%;
+      transform: translateY(-50%);
+      z-index: 0;
+    }
+
+    .side-image-left { left: 0; }
+    .side-image-right { right: 0; }
+
+    .side-image-left img, .side-image-right img {
+      max-width: 120px;
+      opacity: 0.2;
+    }
+
+    /* Header */
     .header {
-      padding: 10px;
+      padding: 2px;
       position: relative;
-      z-index: 2;
+      z-index: 1;
+      margin-bottom: 0px;
     }
 
     .header img {
-      margin-top: 5px;
+      position: relative;
+      margin-top: 40px;
       max-width: 150px;
-    }
-
-    @keyframes glowing {
-      0% {
-        text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900, 0 0 30px #ff6600;
-      }
-      100% {
-        text-shadow: 0 0 20px #ffcc00, 0 0 30px #ff9900, 0 0 40px #ff6600;
-      }
+      margin-bottom: 0px;
     }
 
     .header h1 {
       font-family: 'Cinzel', serif;
       font-size: 48px;
-      margin: 5px 0;
+      margin: 0px 0;
       color: #ffcc00;
+      margin-top: 10px;
+      margin-bottom: 10px;
       animation: glowing 2s infinite alternate;
     }
 
     .subtext {
-      font-size: 18px;
+      font-size: 17px;
       color: #fff;
       margin-bottom: 0px;
     }
 
-    .section {
+    /* Countdown Timer */
+    .countdown {
+      font-size: 14px;
+      font-weight: bold;
       margin-top: 0px;
-    }
-
-    .section h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 24px;
-      color: #fff;
-      text-transform: uppercase;
-      margin-bottom: 0px;
-      border-bottom: 2px solid #fff;
+      color: #ffcc00;
+      padding: 15px;
+      border-radius: 10px;
       display: inline-block;
-      padding-bottom: 5px;
     }
 
-    .details {
-      font-size: 18px;
-      color: #fff;
+    /* Hide Music Player */
+    audio {
+      display: none !important;
     }
 
+    /* Footer with Dancers */
     .footer-dancers {
       display: flex;
       align-items: flex-end;
       justify-content: space-around;
-      margin-top: px;
+      margin-top: 0px;
     }
 
-    .dancers img {
-      max-width: 50px;
-    }
+    .dancers img { max-width: 70px; }
 
-    .footer img {
-      width: 150px;
-    }
+    .footer img { width: 150px; }
 
+    /* Ornaments */
     .ornaments {
       margin-top: 0px;
       display: flex;
@@ -149,50 +150,20 @@
       margin: 0px;
     }
 
-    /* Side Images */
-    .side-image-left, .side-image-right {
-      position: absolute;
-      top: 80%;
-      transform: translateY(-50%);
-      z-index: 0;
-    }
-
-    .side-image-left {
-      left: 0;
-    }
-
-    .side-image-right {
-      right: 0;
-    }
-
-    .side-image-left img, .side-image-right img {
-      max-width: 120px;
-      opacity: 0.2;
-    }
-
     @media (max-width: 768px) {
       .side-image-left img, .side-image-right img {
         max-width: 80px;
       }
 
-      .footer img {
-        width: 175px;
-      }
-
-      .header h1 {
-        font-size: 36px;
-      }
+      .header h1 { font-size: 36px; }
+      .footer img { width: 120px; }
+      .container { padding: 10px; }
     }
- 
-}
 
-.name {
-  display: inline-block;
-  font-family: 'Cinzel', serif;
-  font-size: 48px;
-  color: #ffcc00;
-  animation: fadeInGrow 3s ease-in-out infinite alternate;
-}
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   </style>
 </head>
 <body>
@@ -201,7 +172,12 @@
     <h1>You Are Invited!</h1>
   </div>
 
-  <!-- Side Images -->
+  <!-- Garland -->
+  <div class="garlands">
+    <img src="flower2.png" alt="Flower Garland">
+  </div>
+
+  <!-- Side Decorations -->
   <div class="side-image-left">
     <img src="left-image.png" alt="Left Decoration">
   </div>
@@ -211,68 +187,88 @@
 
   <!-- Main Content -->
   <div class="container">
-    <div class="garlands">
-      <img src="flower2.png" alt="Flower Garland">
-    </div>
     <div class="header">
-      <img src="ganesh.png" alt="Shree Ganesh"><br>
-     <h1><span class="name">Pikkili</span></h1>
-<h1>&</h1>
-<h1><span class="name">Sateesh</span></h1>
-      <p class="subtext">We’re so excited to invite you to celebrate our love and happiness on our wedding day! We can’t wait to share this special moment with you!</div>
-    <div class="section">
-      <h2>Monday, 22nd Aug 2022</h2>
-     <div class="details">
-  <p>Muhurtam: 7:00 PM</p>
-  <p>
-    📌
-    <a href="https://www.google.com/maps/search/?api=1&query=Unitech+Unihomes+Plots+Sec+-+Mu,+Greater+Noida" 
-       target="_blank" 
-       style="color: #fff; text-decoration: underline;">
-      Unitech Unihomes Plots Sec - Mu, Greater Noida
-    </a>
-  </p>
-</div>
+      <img src="ganesh.png" alt="Shree Ganesh">
+      <p class="subtext">With the divine blessings of <br>Lord Sri Venkateshwara Swamy<br>
+        We warmly invite you to join us in celebrating the joyful occasion of the wedding ceremony of
+      </p>
+      <h1>Sateesh Kumar & Amrutha</h1>
+  <!-- Google Maps Location -->
+    <h3>on Monday, 22nd August 2025</h3>
+    <div class="details">
+      <p>Muhurtam: 7:00 PM</p>
+      <p>
+        📌 
+        <a href="https://www.google.com/maps/search/?api=1&query=Unitech+Unihomes+Plots+Sec+-+Mu,+Greater+Noida"
+           target="_blank"
+           style="color: #fff; text-decoration: underline;">
+         Venue (Click Here)
+        </a>
+      </p>
+    </div>
+    <p class="subtext">Your presence and blessings will make this special day even more memorable.
+We look forward to celebrating this beautiful moment with you!</p>
 
+    <!-- Background Music -->
+    <audio autoplay loop>
+      <source src="your-music-file.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Footer with Dancers -->
     <div class="footer-dancers">
-      <div class="dancers">
-        <img src="band2.png" alt="Dancer">
-      </div>
-      <div class="footer">
-        <img src="couple.png" alt="Bride and Groom">
-      </div>
-      <div class="dancers">
-        <img src="band1.png" alt="Dancer">
-      </div>
+      <div class="dancers"><img src="band2.png" alt="Dancer"></div>
+      <div class="footer"><img src="couple.png" alt="Bride and Groom"></div>
+      <div class="dancers"><img src="band1.png" alt="Dancer"></div>
     </div>
 
+    <!-- Ornaments -->
     <div class="ornaments">
       <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
+     <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
-      <img src="ornament.png" alt="Decoration">
-       <img src="ornament.png" alt="Decoration">
-      <img src="ornament.png" alt="Decoration">
+   <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
+     <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
       <img src="ornament.png" alt="Decoration">
-    
+     <img src="ornament.png" alt="Decoration">
+      <img src="ornament.png" alt="Decoration">
     </div>
+        <!-- Countdown Timer -->
+      <div class="countdown" id="countdown-timer">00 Days : 00 Hours : 00 Minutes : 00 Seconds</div>
   </div>
 
   <script>
     window.addEventListener('load', function() {
       const preloader = document.getElementById('preloader');
+      const content = document.querySelector('.container');
+
       preloader.style.opacity = '0';
-      preloader.style.transition = 'opacity 2s ease-in-out';
+      preloader.style.transition = 'opacity 1s ease-in-out';
+
       setTimeout(() => {
         preloader.style.display = 'none';
-        document.querySelector('.container').style.display = 'block';
-      }, 2500);
+        content.style.display = 'block';
+      }, 1000);
     });
+
+    function updateCountdown() {
+      const weddingDate = new Date("August 22, 2025 19:00:00").getTime();
+      const now = new Date().getTime();
+      const timeLeft = weddingDate - now;
+
+      document.getElementById("countdown-timer").innerHTML =
+        timeLeft > 0 ? `${Math.floor(timeLeft / (1000 * 60 * 60 * 24))} Days : ` +
+        `${Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))} Hours : ` +
+        `${Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))} Minutes : ` +
+        `${Math.floor((timeLeft % (1000 * 60)) / 1000)} Seconds` : "🎉 The wedding has begun!";
+    }
+    setInterval(updateCountdown, 1000);
   </script>
 </body>
 </html>
