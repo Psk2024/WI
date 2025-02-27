@@ -308,3 +308,20 @@ input, textarea{
     color: #ffcc00;
     text-align: center;
 }
+.heart-beat {
+    display: inline-block;
+    font-size: 1em; /* Adjust size as needed */
+    animation: heartbeat 0.5s infinite alternate;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(0.6);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
