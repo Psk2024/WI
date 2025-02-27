@@ -1,266 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>Wedding Invitation</title>
-				<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
-					<style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: radial-gradient(circle, #012b29, #0c1502 50%);
-      color: #b8a850;
-      text-align: center;
-      overflow-x: hidden;
-      width: 100vw;
-      min-height: 100vh;
-    }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 
-    /* Preloader */
-    #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, #012b29, #0c1502 80%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
+    <!-- CSS File -->
+    <link rel="stylesheet" href="styles.css">
 
-    #preloader h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 38px;
-      color: #fff;
-      animation: fadeText 3s ease-in-out;
-    }
-
-    /* Main Content */
-    .container {
-      padding: 5vw;
-      display: none;
-    }
-
-    /* Garland */
-    .garlands {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      z-index: 1;
-    }
-
-    .garlands img {
-      max-width: 100%;
-    }
-
-    /* Side Decorations */
-    .side-image-left, .side-image-right {
-      position: absolute;
-      top: 80%;
-      z-index: 0;
-    }
-
-    .side-image-left { left: 0; }
-    .side-image-right { right: 0; }
-
-    .side-image-left img, .side-image-right img {
-      max-width: 120px;
-      opacity: 0.2;
-    }
-    /* Header */
-    .header {
-      position: relative;
-      z-index: 1;
-    }
-
-    .header img {
-      margin-top: 40px;
-      max-width: 150px;
-    }
-
-    .header h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 48px;
-      color: #ffcc00;
-      margin-top: 10px;
-      animation: glowing 2s infinite alternate;
-    }
-
-    .subtext {
-      font-size: 17px;
-      color: #fff;
-    }
-
-    /* Countdown Timer */
-    .countdown {
-      font-size: 16px;
-      font-weight: bold;
-      color: #ffcc00;
-      padding: 10px;
-      display: flex;
-      justify-content: center;
-    }
-
-    /* Responsive Images */
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Footer with Dancers */
-    .footer-dancers {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      margin-top: 5px;
-    }
-
-    .dancers img { max-width: 70px; }
-    .footer img { width: 200px; }
-
-    /* Ornaments */
-    .ornaments {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .ornaments img {
-      max-width: 25px;
-      margin: 0px;
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      .side-image-left img, .side-image-right img {
-        max-width: 80px;
-      }
-
-      .header h1 { font-size: 36px; }
-      .footer img { width: 150px; }
-      .countdown { font-size: 14px; }
-    }
-  .floating-button {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    background: rgba(0, 153, 255, 0.9);
-    color: white;
-    border: none;
-    padding: 5px 5px;
-    font-size: 15px;
-    border-radius: 5%;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 153, 255, 0.5);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-    z-index: 1000;
-    outline: none;
-}
-
-.floating-button:hover {
-    background-color: #007acc;
-}
-  /* Floating Wishes Button */
-.floating-wishes-button {
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    background: rgba(0, 153, 255, 0.9); /* Blue color */
-    color: white;
-    border: none;
-    padding: 5px 5px;
-    font-size: 15px;
-    border-radius: 5%;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 153, 255, 0.5);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-    z-index: 1000;
-    outline: none;
-}
-
-/* Hover Effect */
-.floating-wishes-button:hover {
-    transform: scale(1.1);
-    background: rgba(0, 174, 255, 1);
-    box-shadow: 0 6px 14px rgba(0, 174, 255, 0.7);
-}
-
-/* Wishes Popup */
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 85%;
-    max-width: 300px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    z-index: 2000;
-    text-align: center;
-}
-
-/* Popup Content */
-.popup-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-}
-
-.popup h2 {
-    margin-bottom: 5px;
-}
-
-/* Close Button */
-.close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-/* Input Fields */
-input, textarea{
-  
-    width: 85%;
-    padding: 10px;
-    margin: 5px 5px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 16px;
-}
-
-/* Submit Button */
-.popup button {
-  background: #0099ff;
-  width: 75%;
-  padding: 10px;
-  margin: 5px 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    border-radius: 10px;
-}
-
-.popup button:hover {
-    background: #007acc;
-}
-  </style>
-				</head>
-				<body>
-					<!-- Preloader -->
-					<div id="preloader">
-						<h1>You Are Invited!</h1>
-					</div>
+    <!-- Fireworks Library -->
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/index.umd.js"></script>
+</head>
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div class="spinner"></div>
+   <h1>Pikkili Family<br>Wedding Invitation</h1>
+</div>
 					<!-- Garland -->
 					<div class="garlands">
 						<img src="flower2.png" alt="Flower Garland">
@@ -275,32 +38,28 @@ input, textarea{
 								<!-- Main Content -->
 								<div class="container">
 									<div class="header">
-										<img src="ganesh.png" alt="Shree Ganesh">
-											<p class="subtext">With the divine blessings of 
-												
-												<br>Lord Sri Venkateshwara Swamy
-													
+										<img src="Balaji2.png" alt="Shree Balaji"><br>
+									   
+											<span class="handwriting-text">With the divine blessings of Lord
+												<br><b><span style="color: #ffcc00;">Sri Venkateshwara Swamy</span></b>
 													<br>
-        We warmly invite you to join us in celebrating the joyful occasion of the wedding ceremony of
-      
-													
-													</p>
-													<h1>Sateesh & Kumar</h1>
-													<h3>on Tuesday, 27nd May 2025</h3>
-													<div class="details">
-														<p>Muhurtam: 7:00 PM</p>
-														<p>
+        We joyfully invite you to celebrate the auspicious occasion of the wedding ceremony of</span>
+									    <span class="handwriting-names">Sateesh ❤️ Kumar</span>
+									    <span class="handwriting-texts"><br>
+													on Tuesday, 27th May 2025<br>
+														Muhurtam: 7:00 PM<br>
+														
           📌 
           
-															
 															<a href="https://www.google.com/maps/search/?api=1&query=Unitech+Unihomes+Plots+Sec+-+Mu,+Greater+Noida"
              target="_blank"
-             style="color: #fff; text-decoration: underline;">
+             style="color: #ffcc00; text-decoration: underline;">
            Venue (Click Here)
           </a>
-														</p>
-													</div>
-													<p class="subtext">Your presence and blessings will make this special day even more memorable.</p>
+														
+													</span><br>
+													<span class="handwriting-text">Your presence and blessings will make this special day even more memorable as we embark on this beautiful journey together.<br>
+									    "We look forward to celebrating with you!"</span>
 													<!-- Background Music -->
 													<audio id="myAudio" autoplay loop>
 														<source src="music.mp3" type="audio/mpeg">
@@ -309,24 +68,25 @@ input, textarea{
 														<button class="floating-button" onclick="toggleAudio()">🔇</button>
 														<!-- Floating Wishes Button -->
 														<button class="floating-wishes-button" onclick="openWishesPopup()">💌</button>
-														<!-- Wishes Popup Form -->
-														<div id="wishesPopup" class="popup">
-															<div class="popup-content">
-																<span class="close" onclick="closeWishesPopup()">&times;</span>
-																<h2>Send Your Message</h2>
-																<form id="wishesForm" 
+							<!-- Wishes Popup Form -->
+<div id="wishesPopup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closeWishesPopup()">&times;</span>
+        <h2>Send Your Message</h2>
+        <form id="wishesForm" 
               action="https://docs.google.com/forms/d/e/1FAIpQLSdR_NVl2_yV9BtwKcWFRwbfID4SNmyauwCklqOSRSpHLScW2Q/formResponse" 
               method="POST" 
               target="hidden_iframe" 
-              onsubmit="showThankYouMessage(); return false;">
-																	<input type="text" name="entry.476830613" id="wisherName" placeholder="Name" required>
-																		<textarea name="entry.80548757" id="wisherMessage" placeholder="Message" required></textarea>
-																		<button type="submit">Send</button>
-																	</form>
-																	<iframe name="hidden_iframe" style="display:none;"></iframe>
-																	<p id="thanksMessage" style="display:none; color: green;">Thank you for your wishes!</p>
-																</div>
-															</div>
+              onsubmit="showThankYouMessage(); return false;">      
+            <input type="text" name="entry.476830613" id="wisherName" placeholder="Name" required>
+            <textarea name="entry.80548757" id="wisherMessage" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+        <p id="thanksMessage" style="display:none; color: green;">Thank You!</p>
+    </div>
+</div>
+
 															<!-- Footer with Dancers -->
 															<div class="footer-dancers">
 																<div class="dancers">
@@ -340,100 +100,12 @@ input, textarea{
 																			</div>
 																		</div>
 																		<!-- Ornaments -->
-																		<div class="ornaments">
-																			<img src="ornament.png" alt="Decoration">
-																				<img src="ornament.png" alt="Decoration">
-																					<img src="ornament.png" alt="Decoration">
-																						<img src="ornament.png" alt="Decoration">
-																							<img src="ornament.png" alt="Decoration">
-																								<img src="ornament.png" alt="Decoration">
-																									<img src="ornament.png" alt="Decoration">
-																										<img src="ornament.png" alt="Decoration">
-																											<img src="ornament.png" alt="Decoration">
-																												<img src="ornament.png" alt="Decoration">
-																													<img src="ornament.png" alt="Decoration">
-																														<img src="ornament.png" alt="Decoration">
-																														</div>
-																													</div>
+									        <div class="ornaments"></div>
 																													<!-- Countdown Timer -->
 																													<div class="countdown" id="countdown-timer">00 Days : 00 Hours : 00 Minutes : 00 Seconds</div>
 																												</div>
-																												<script>
-    window.addEventListener('load', function() {
-      const preloader = document.getElementById('preloader');
-      const content = document.querySelector('.container');
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
 
-      preloader.style.opacity = '0';
-      preloader.style.transition = 'opacity 1s ease-in-out';
-
-      setTimeout(() => {
-        preloader.style.visibility = 'hidden';
-        content.style.display = 'block';
-      }, 1200);
-    });
-  function toggleAudio() {
-    var audio = document.getElementById("myAudio");
-    var button = document.querySelector(".floating-button");
-
-    if (audio.paused) {
-        audio.play();
-        button.innerHTML = "🔊"; // Sound On Icon
-    } else {
-        audio.pause();
-        button.innerHTML = "🔇"; // Muted Icon
-    }
-}
-  function openWishesPopup() {
-    document.getElementById("wishesPopup").style.display = "block";
-}
-
-
-function submitWish() {
-    var name = document.getElementById("wisherName").value.trim();
-    var message = document.getElementById("wisherMessage").value.trim();
-
-    if (name === "" || message === "") {
-        alert("Please enter both your name and your wishes.");
-        return;
-    }
-
-    alert("Thank you, " + name + "! Your wish has been submitted.");
-    
-    // Optionally, clear the input fields after submission
-    document.getElementById("wisherName").value = "";
-    document.getElementById("wisherMessage").value = "";
-
-    closeWishesPopup();
-}
-
-    function updateCountdown() {
-      const weddingDate = new Date("May 27, 2025 19:00:00").getTime();
-      const now = new Date().getTime();
-      const timeLeft = weddingDate - now;
-
-      document.getElementById("countdown-timer").innerHTML =
-        timeLeft > 0 ? `${Math.floor(timeLeft / (1000 * 60 * 60 * 24))} Days : ` +
-        `${Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))} Hours : ` +
-        `${Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))} Minutes : ` +
-        `${Math.floor((timeLeft % (1000 * 60)) / 1000)} Seconds` : "🎊 Happily Married 🎊";
-    }
-    setInterval(updateCountdown, 1000);
-				  
-				  function closeWishesPopup() {
-        document.getElementById("wishesPopup").style.display = "none";
-    }
-
-    function showThankYouMessage() {
-        setTimeout(function () {
-            document.getElementById("thanksMessage").style.display = "block";
-            setTimeout(closeWishesPopup, 2000);
-        }, 1000);
-    }
-
-    document.getElementById("wishesForm").onsubmit = function () {
-        showThankYouMessage();
-        return true; // Allow Google Form to submit
-    };
-				  </script>
-																											</body>
+</body>
 </html>
