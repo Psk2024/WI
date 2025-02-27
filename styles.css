@@ -1,0 +1,310 @@
+body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: radial-gradient(circle, #012b29, #0c1502 50%);
+      color: #b8a850;
+      text-align: center;
+      overflow-x: hidden;
+      width: 100vw;
+      min-height: 100vh;
+    }
+/* Initially hide the main content */
+.container {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    }
+
+/* Fade-in effect after preloader disappears */
+.show-content {
+    opacity: 1;
+}
+
+      
+
+    /* Garland */
+    .garlands {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      z-index: 1;
+    }
+
+    .garlands img {
+      max-width: 100%;
+    }
+
+    /* Side Decorations */
+    .side-image-left, .side-image-right {
+      position: absolute;
+      top: 80%;
+      z-index: 0;
+    }
+
+    .side-image-left { left: 0; }
+    .side-image-right { right: 0; }
+
+    .side-image-left img, .side-image-right img {
+      max-width: 120px;
+      opacity: 0.2;
+    }
+    /* Header */
+    .header {
+      position: relative;
+      z-index: 1;
+    }
+.details {
+            font-size: 18px;
+            margin-top: 0px;
+            color: #ffe0b2;
+        }
+        
+    .header img {
+      margin-top: 40px;
+      max-width: 200px;
+    }
+
+    .header h5 {
+      font-family: 'Cinzel', serif;
+      font-size: 48px;
+      color: #ffccff;
+      margin-top: 5px;
+      
+    }
+
+    .subtext {
+      font-size: 17px;
+      color: #fff;
+    }
+
+    /* Countdown Timer */
+    .countdown {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffcc00;
+      padding: 0px;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Responsive Images */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Footer with Dancers */
+    .footer-dancers {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      margin-top: 3px;
+    }
+
+    .dancers img { max-width: 70px; }
+    .footer img { width: 250px; }
+
+    /* Ornaments */
+    .ornaments {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .ornaments img {
+      max-width: 25px;
+      margin: 0px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .side-image-left img, .side-image-right img {
+        max-width: 80px;
+      }
+
+      .header h1 { font-size: 36px; }
+      .footer img { width: 150px; }
+      .countdown { font-size: 14px; }
+    }
+  .floating-button {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 153, 255, 0.9);
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    font-size: 15px;
+    border-radius: 5%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 153, 255, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    z-index: 1000;
+    outline: none;
+}
+
+.floating-button:hover {
+    background-color: #007acc;
+}
+  /* Floating Wishes Button */
+.floating-wishes-button {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 153, 255, 0.9); /* Blue color */
+    color: white;
+    border: none;
+    padding: 5px 5px;
+    font-size: 15px;
+    border-radius: 5%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 153, 255, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    z-index: 1000;
+    outline: none;
+}
+
+/* Hover Effect */
+.floating-wishes-button:hover {
+    transform: scale(1.1);
+    background: rgba(0, 174, 255, 1);
+    box-shadow: 0 6px 14px rgba(0, 174, 255, 0.7);
+}
+
+/* Wishes Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    max-width: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    text-align: center;
+}
+
+/* Popup Content */
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+}
+
+.popup h2 {
+    margin-bottom: 5px;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Input Fields */
+input, textarea{
+  
+    width: 85%;
+    padding: 10px;
+    margin: 5px 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+/* Submit Button */
+.popup button {
+  background: #0099ff;
+  width: 75%;
+  padding: 10px;
+  margin: 5px 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.popup button:hover {
+    background: #007acc;
+}
+@keyframes fadeText {
+  0%, 100% { opacity: 0; }
+  0% { opacity: 1; }
+}
+/* Preloader Styles */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #012b29;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 2s ease-in-out;
+}
+
+/* Spinning Loader Animation */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ffcc00;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#preloader h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    color: #fff;
+    animation: fadeText 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeText {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+/* Elegant Handwriting for Names */
+.handwriting-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    color: #fc0fc0;
+    padding: 10px 10px;
+    border: 0px solid #ffcc00;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* Simple Handwriting for Body Text */
+.handwriting-text {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+}
+/* Handwritten Body Text */
+.handwriting-texts {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 25px;
+    color: #ffcc00;
+    text-align: center;
+}
