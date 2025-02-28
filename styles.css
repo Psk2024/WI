@@ -46,33 +46,24 @@ body {
 	z-index: 1
 }
 
-.central{
-	position: absolute;
-	top:50%;
-	left:50%;
-	transform: tranalate(-50,-50);
-	z-index: 0;
-	text-align: center;
-}
-
-.side-image-left1,
-.side-image-right1 {
+.side-image-left,
+.side-image-right {
 	position: absolute;
 	top: 70%;
 	z-index: 0
 }
 
-.side-image-left1 {
+.side-image-left {
 	left: 0
 }
 
-.side-image-right1 {
+.side-image-right {
 	right: 0
 }
 
 
-.side-image-left1 img,
-.side-image-right1 img {
+.side-image-left img,
+.side-image-right img {
 	max-width: 120px;
 	opacity: .2
 }
