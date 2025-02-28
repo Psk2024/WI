@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+        <h1>Pikkili Family<br>Wedding Invitation</h1>
+    </div>
+    <div class="garlands"><img src="flower2.png" alt="Flower Garland"></div>
+    <div class="side-image-left1"><img src="left-image.png" alt="Left Decoration"></div>
+    <div class="side-image-right1"><img src="right-image.png" alt="Right Decoration"></div>
+    <div class="container">
+        <div class="header"><img src="balaji2.png" alt="Shree Balaji">
+            <br><span class="handwriting-text">With the divine blessings of Lord<br><b><span style="color:#fc0">Sri Venkateshwara Swamy</span></b>
+                <br>We joyfully invite you to celebrate the auspicious occasion of the wedding ceremony of</span> <span class="handwriting-names">Sateesh <span class="heart-beat">❤️</span> Kumar</span> <span class="handwriting-texts"><br>on Tuesday, 27th May 2025<br>Muhurtam: 7:00 PM<br>📌 <a href="https://goo.gl/maps/dFvKmN2C5y9vbxwv6" target="_blank" style="color:#fc0;text-decoration:underline">Venue (Click Here)</a></span>
+            <br><span class="handwriting-text">Your presence and blessings will make this special day even more memorable as we embark on this beautiful journey together.<br>"We look forward to celebrating with you!"</span>
+            <div class="footer-dancers">
+                <div class="dancers"><img src="band2.png" alt="Dancer"></div>
+                <div class="footer"><img src="couple.png" alt="Bride and Groom"></div>
+                <div class="dancers"><img src="band1.png" alt="Dancer"></div>
+            </div>
+            <div class="ornaments"></div>
+            <div class="countdown" id="countdown-timer">00 Days : 00 Hours : 00 Minutes : 00 Seconds</div>
+        </div>
+        <audio id="myAudio" autoplay loop>
+            <source src="music.mp3" type="audio/mpeg"></source>
+        </audio>
+        <button class="floating-button" onclick="toggleAudio()">🔇</button>
+        <button class="floating-wishes-button" onclick="openWishesPopup()">💌</button>
+        <div id="wishesPopup" class="popup">
+            <div class="popup-content"><span class="close" onclick="closeWishesPopup()">&times;</span>
+                <h2>Send Your Message</h2>
+                <form id="wishesForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdR_NVl2_yV9BtwKcWFRwbfID4SNmyauwCklqOSRSpHLScW2Q/formResponse" method="POST" target="hidden_iframe">
+                    <input name="entry.476830613" id="wisherName" placeholder="Name" required>
+                    <textarea name="entry.80548757" id="wisherMessage" placeholder="Message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+                <iframe name="hidden_iframe" style="display:none"></iframe>
+                <p id="thanksMessage" style="display:none;color:green">Thank You!</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/index.umd.js"></script>
+</body>
+
+</html>
