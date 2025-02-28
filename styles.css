@@ -285,7 +285,7 @@ textarea {
 .heart-beat {
 	animation: .5s infinite alternate heartbeat;
 	display: inline-block;
-	font-size: 1em
+	font-size: 10em
 }
 
 @keyframes heartbeat {
