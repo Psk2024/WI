@@ -49,7 +49,7 @@ body {
 .side-image-left,
 .side-image-right {
 	position: absolute;
-	top: 70%;
+	top: 60%;
 	z-index: 0
 }
 
